@@ -27,11 +27,11 @@ async function run() {
     const touristsSpotCollection = client.db("touristsSpotDB").collection("touristsSpot")
     const countryCollection = client.db("touristsSpotDB").collection("countryData")
 
-    // app.post('/touristsSpot', async(req,res)=>{
-    //   const touristsSpot = req.body;
-    //   const result = await touristsSpotCollection.insertOne(touristsSpot)
-    //   res.send(result)
-    // })
+    app.post('/touristsSpot', async(req,res)=>{
+      const touristsSpot = req.body;
+      const result = await touristsSpotCollection.insertOne(touristsSpot)
+      res.send(result)
+    })
 
     app.get('/touristsSpot',async(req,res)=>{
       const cursor = touristsSpotCollection.find();
