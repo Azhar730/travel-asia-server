@@ -38,11 +38,11 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result)
     })
-    // app.get('/country',async(req,res)=>{
-    //   const cursor = countryCollection.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result)
-    // })
+    app.get('/country',async(req,res)=>{
+      const cursor = countryCollection.find();
+      const result = await cursor.toArray();
+      res.send(result)
+    })
 
     app.get('/touristsSpot/:id',async(req,res)=>{
       const id = req.params.id
